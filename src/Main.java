@@ -1,6 +1,7 @@
 import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Dev;
+import br.com.dio.desafio.dominio.Dificuldade;
 import br.com.dio.desafio.dominio.Mentoria;
 
 import java.time.LocalDate;
@@ -11,20 +12,32 @@ public class Main {
         curso1.setTitulo("curso java");
         curso1.setDescricao("descrição curso java");
         curso1.setCargaHoraria(8);
+        curso1.setNivel(Dificuldade.DIFICIL);
 
         Curso curso2 = new Curso();
         curso2.setTitulo("curso js");
-        curso2.setDescricao("descrição curso js");
+        curso2.setDescricao("eventos html");
         curso2.setCargaHoraria(4);
+        curso2.setNivel(Dificuldade.BASICO);
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("mentoria de java");
-        mentoria.setDescricao("descrição mentoria java");
+        mentoria.setDescricao("programação básica java");
         mentoria.setData(LocalDate.now());
+        mentoria.setNivel(Dificuldade.INTERMEDIARIO);
 
-        /*System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);*/
+        System.out.println("Dificuldade de Cursos e Mentorias");
+        System.out.println(curso1.getTitulo() + " é "+ curso1.getNivel().toString());
+        System.out.println(curso2.getTitulo() + " é "+ curso2.getNivel().toString());
+        System.out.println(mentoria.getTitulo() + " é "+ mentoria.getNivel().toString());
+        
+
+        System.out.println("Descrição Completa de Cursos e Mentorias");
+        curso1.descricaoCursoCompleta();
+        curso2.descricaoCursoCompleta();
+        mentoria.descricaoMentoriaCompleta();
+
+        System.out.println("===============");
 
         Bootcamp bootcamp = new Bootcamp();
         bootcamp.setNome("Bootcamp Java Developer");

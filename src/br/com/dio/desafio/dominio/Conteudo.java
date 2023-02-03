@@ -6,6 +6,15 @@ public abstract class Conteudo {
 
     private String titulo;
     private String descricao;
+    private Dificuldade nivel;
+
+    public Dificuldade getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Dificuldade nivel) {
+        this.nivel = nivel;
+    }
 
     public abstract double calcularXp();
 
